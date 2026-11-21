@@ -18,6 +18,9 @@ class SiswaController extends Controller
         if ($request->has('search')) {
             $query->where('nama', 'like', '%' . $request->search . '%');
         }
+        if ($request->has('id_kelas')) {
+            $query->where('id_kelas', $request->id_kelas);
+        }
 
         $siswa = $query->paginate($request->input('per_page', 15));
 

@@ -24,11 +24,11 @@ class AuthController extends Controller
 
             $user = Auth::user();
             if ($user->isAdmin()) {
-                return redirect()->intended('/admin/dashboard');
+                return redirect()->intended(route('admin.dashboard'));
             } elseif ($user->isGuru()) {
-                return redirect()->intended('/guru/dashboard');
+                return redirect()->intended(route('guru.dashboard'));
             } else {
-                return redirect()->intended('/siswa/dashboard');
+            return redirect()->intended(route('siswa.dashboard'));
             }
         }
 
